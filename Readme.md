@@ -12,6 +12,25 @@ This repository contains the backend service for a full-featured video streaming
 - **Authentication**: JWT (JSON Web Tokens) & bcrypt
 - **File Storage**: Multer & Cloudinary
 
+## 🧩 Core Architecture & Utilities
+
+### 1. `asyncHandler` Wrapper
+Standard higher-order function to encapsulate asynchronous controller logic, removing repetitive `try-catch` boilerplate across route handlers.
+
+### 2. `ApiError` Class
+Custom operational error class extending native JavaScript `Error` with HTTP status codes, structured error payloads, error stacks, and standard formatting.
+
+### 3. `ApiResponse` Class
+Standardized API response wrapper ensuring consistent JSON contract across all client responses:
+```json
+{
+  "statusCode": 200,
+  "data": { ... },
+  "message": "Success",
+  "success": true
+}
+```
+
 ## ⚙️ Getting Started
 
 ### 1. Clone the repository
