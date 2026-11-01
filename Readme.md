@@ -6,7 +6,7 @@ A scalable and production-grade backend inspired by modern video-sharing platfor
 This repository contains the backend service for a full-featured video streaming and sharing platform. It is designed following modern software engineering principles including clean modular architecture, custom error handling, aggregation pipelines, and secure JWT authentication.
 
 ## 🛠 Tech Stack
-- **Runtime**: Node.js
+- **Runtime**: Node.js (ES Modules)
 - **Framework**: Express.js
 - **Database**: MongoDB with Mongoose ODM
 - **Authentication**: JWT (JSON Web Tokens) & bcrypt
@@ -31,6 +31,15 @@ Standardized API response wrapper ensuring consistent JSON contract across all c
 }
 ```
 
+## 🗄 Database & Server Configuration
+
+- **Database Connection (`src/db/index.js`)**: Connects to MongoDB Atlas using Mongoose with connection pooling and error-handling event listeners.
+- **Express Bootstrap (`src/app.js`)**:
+  - `cors`: Configured with credentials and origin whitelisting.
+  - `express.json` & `express.urlencoded`: Strict payload limits (`16kb`) for body parser security.
+  - `cookieParser`: Cookie parsing for reading and setting secure HTTP-only refresh tokens.
+  - `express.static`: Configured public assets directory for static files.
+
 ## ⚙️ Getting Started
 
 ### 1. Clone the repository
@@ -50,6 +59,11 @@ Create a `.env` file from `.env.sample`:
 cp .env.sample .env
 ```
 Fill in your database connection string, JWT secrets, and Cloudinary API credentials.
+
+### 4. Run development server
+```bash
+npm run dev
+```
 
 ---
 *Note: This project is under active development.*
