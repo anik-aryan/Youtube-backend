@@ -40,6 +40,13 @@ Standardized API response wrapper ensuring consistent JSON contract across all c
   - `cookieParser`: Cookie parsing for reading and setting secure HTTP-only refresh tokens.
   - `express.static`: Configured public assets directory for static files.
 
+## 📁 Media Processing Pipeline
+
+A two-step resilient file upload workflow:
+1. **Local Multer Storage (`src/middlewares/multer.middleware.js`)**: Multipart form uploads are temporarily staged to `public/temp` with unique filenames.
+2. **Cloudinary Remote Upload (`src/utils/cloudinary.js`)**: Files are uploaded to Cloudinary using their SDK with `resource_type: "auto"` to automatically detect images and video assets.
+3. **Local Cleanup**: Synchronous cleanup (`fs.unlinkSync`) deletes temporary files from the server whether the upload succeeds or encounters an error, preventing disk overflow.
+
 ## ⚙️ Getting Started
 
 ### 1. Clone the repository
