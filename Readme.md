@@ -47,6 +47,13 @@ A two-step resilient file upload workflow:
 2. **Cloudinary Remote Upload (`src/utils/cloudinary.js`)**: Files are uploaded to Cloudinary using their SDK with `resource_type: "auto"` to automatically detect images and video assets.
 3. **Local Cleanup**: Synchronous cleanup (`fs.unlinkSync`) deletes temporary files from the server whether the upload succeeds or encounters an error, preventing disk overflow.
 
+## 📡 API Endpoints
+
+### Health Check
+| Method | Endpoint | Description | Auth Required |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/v1/healthcheck` | Returns server uptime, status, and system timestamp | No |
+
 ## ⚙️ Getting Started
 
 ### 1. Clone the repository
