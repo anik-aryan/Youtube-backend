@@ -54,6 +54,21 @@ A two-step resilient file upload workflow:
 | :--- | :--- | :--- | :--- |
 | `GET` | `/api/v1/healthcheck` | Returns server uptime, status, and system timestamp | No |
 
+### Authentication & Users
+| Method | Endpoint | Description | Auth Required |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/api/v1/users/register` | Register new user with avatar & cover image | No |
+| `POST` | `/api/v1/users/login` | User login (returns access and refresh tokens) | No |
+| `POST` | `/api/v1/users/logout` | Logout user and clear refresh token | Yes |
+| `POST` | `/api/v1/users/refresh-token` | Regenerate access token using refresh token | No |
+| `POST` | `/api/v1/users/change-password` | Update current user password | Yes |
+| `GET` | `/api/v1/users/current-user` | Get logged-in user profile details | Yes |
+| `PATCH` | `/api/v1/users/update-account` | Update account details (fullname, email) | Yes |
+| `PATCH` | `/api/v1/users/avatar` | Update user profile avatar | Yes |
+| `PATCH` | `/api/v1/users/cover-image` | Update user channel cover image | Yes |
+| `GET` | `/api/v1/users/c/:username` | Fetch channel profile with subscriber count via aggregation | Yes |
+| `GET` | `/api/v1/users/history` | Get user video watch history via aggregation pipeline | Yes |
+
 ## ⚙️ Getting Started
 
 ### 1. Clone the repository
