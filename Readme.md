@@ -69,6 +69,16 @@ A two-step resilient file upload workflow:
 | `GET` | `/api/v1/users/c/:username` | Fetch channel profile with subscriber count via aggregation | Yes |
 | `GET` | `/api/v1/users/history` | Get user video watch history via aggregation pipeline | Yes |
 
+### Video Management
+| Method | Endpoint | Description | Auth Required |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/v1/videos` | Get all videos with pagination, search query, sorting, and userId filter | No |
+| `POST` | `/api/v1/videos` | Upload video file and thumbnail to Cloudinary and publish | Yes |
+| `GET` | `/api/v1/videos/:videoId` | Get video details by ID | Yes |
+| `PATCH` | `/api/v1/videos/:videoId` | Update video title, description, and thumbnail | Yes |
+| `DELETE` | `/api/v1/videos/:videoId` | Delete video and associated media | Yes |
+| `PATCH` | `/api/v1/videos/toggle/publish/:videoId` | Toggle video public/private publish status | Yes |
+
 ## ⚙️ Getting Started
 
 ### 1. Clone the repository
