@@ -79,6 +79,14 @@ A two-step resilient file upload workflow:
 | `DELETE` | `/api/v1/videos/:videoId` | Delete video and associated media | Yes |
 | `PATCH` | `/api/v1/videos/toggle/publish/:videoId` | Toggle video public/private publish status | Yes |
 
+### Community & Tweets
+| Method | Endpoint | Description | Auth Required |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/api/v1/tweets` | Create a new community tweet post | Yes |
+| `GET` | `/api/v1/tweets/user/:userId` | Get all tweets created by a specific user | Yes |
+| `PATCH` | `/api/v1/tweets/:tweetId` | Update an existing tweet post | Yes |
+| `DELETE` | `/api/v1/tweets/:tweetId` | Delete a tweet post | Yes |
+
 ## ⚙️ Getting Started
 
 ### 1. Clone the repository
