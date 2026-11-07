@@ -87,6 +87,13 @@ A two-step resilient file upload workflow:
 | `PATCH` | `/api/v1/tweets/:tweetId` | Update an existing tweet post | Yes |
 | `DELETE` | `/api/v1/tweets/:tweetId` | Delete a tweet post | Yes |
 
+### Subscriptions System
+| Method | Endpoint | Description | Auth Required |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/api/v1/subscriptions/c/:channelId` | Toggle channel subscription (subscribe/unsubscribe) | Yes |
+| `GET` | `/api/v1/subscriptions/c/:channelId` | Get list of subscribers for a channel | Yes |
+| `GET` | `/api/v1/subscriptions/u/:subscriberId` | Get list of channels a user has subscribed to | Yes |
+
 ## ⚙️ Getting Started
 
 ### 1. Clone the repository
