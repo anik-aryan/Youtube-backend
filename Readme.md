@@ -94,6 +94,22 @@ A two-step resilient file upload workflow:
 | `GET` | `/api/v1/subscriptions/c/:channelId` | Get list of subscribers for a channel | Yes |
 | `GET` | `/api/v1/subscriptions/u/:subscriberId` | Get list of channels a user has subscribed to | Yes |
 
+### Comments
+| Method | Endpoint | Description | Auth Required |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/v1/comments/:videoId` | Get paginated comments for a video | Yes |
+| `POST` | `/api/v1/comments/:videoId` | Add a comment to a video | Yes |
+| `PATCH` | `/api/v1/comments/c/:commentId` | Update comment text | Yes |
+| `DELETE` | `/api/v1/comments/c/:commentId` | Delete a comment | Yes |
+
+### Likes System
+| Method | Endpoint | Description | Auth Required |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/api/v1/likes/toggle/v/:videoId` | Toggle like status on a video | Yes |
+| `POST` | `/api/v1/likes/toggle/c/:commentId` | Toggle like status on a comment | Yes |
+| `POST` | `/api/v1/likes/toggle/t/:tweetId` | Toggle like status on a tweet | Yes |
+| `GET` | `/api/v1/likes/videos` | Fetch all videos liked by authenticated user | Yes |
+
 ## ⚙️ Getting Started
 
 ### 1. Clone the repository
