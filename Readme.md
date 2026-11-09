@@ -110,6 +110,23 @@ A two-step resilient file upload workflow:
 | `POST` | `/api/v1/likes/toggle/t/:tweetId` | Toggle like status on a tweet | Yes |
 | `GET` | `/api/v1/likes/videos` | Fetch all videos liked by authenticated user | Yes |
 
+### Playlist Management
+| Method | Endpoint | Description | Auth Required |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/api/v1/playlist` | Create a new user playlist | Yes |
+| `GET` | `/api/v1/playlist/:playlistId` | Get playlist details and video items | Yes |
+| `PATCH` | `/api/v1/playlist/:playlistId` | Update playlist name and description | Yes |
+| `DELETE` | `/api/v1/playlist/:playlistId` | Delete a playlist | Yes |
+| `PATCH` | `/api/v1/playlist/add/:videoId/:playlistId` | Add video to a playlist | Yes |
+| `PATCH` | `/api/v1/playlist/remove/:videoId/:playlistId` | Remove video from a playlist | Yes |
+| `GET` | `/api/v1/playlist/user/:userId` | Get all playlists created by a specific user | Yes |
+
+### Channel Dashboard & Analytics
+| Method | Endpoint | Description | Auth Required |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/v1/dashboard/stats` | Channel stats (total views, subscribers, videos, likes) | Yes |
+| `GET` | `/api/v1/dashboard/videos` | All videos uploaded by the channel with metrics | Yes |
+
 ## ⚙️ Getting Started
 
 ### 1. Clone the repository
