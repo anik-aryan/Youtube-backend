@@ -8,16 +8,26 @@
     "start": "node -r dotenv/config --experimental-json-modules src/index.js",
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anik-aryan/Youtube-backend.git"
+  },
   "keywords": [
     "javascript",
     "backend",
     "express",
     "mongodb",
     "jwt",
-    "youtube-clone"
+    "youtube-clone",
+    "cloudinary",
+    "rest-api"
   ],
-  "author": "Anik Aryan",
+  "author": "Anik Aryan <anikaryan476@gmail.com>",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anik-aryan/Youtube-backend/issues"
+  },
+  "homepage": "https://github.com/anik-aryan/Youtube-backend#readme",
   "devDependencies": {
     "nodemon": "^3.1.10",
     "prettier": "^3.6.2"
